@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
+
+        <link rel="stylesheet" href="css/icon-font.css">
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="shortcut icon" type="image/png" href="img/favicon.png">
+        
+        <title>Natours | Exciting tours for adventurous people</title>
+    </head>
+    <!-- los nombres de las clases segun la arquitectura BEM-->
+    <body>
+        <!-- header es el nombre del bloque-->
+        <header class="header">
+             <!-- cada elemento debe llevar el nombre del bloque -->
+           <div class="header__logo-box">
+            <img src="img/logo-white.png" alt="logo" class="header__logo">
+           </div>
+           <div class="header__text-box">
+                <!-- esto podria considerarse como otro bloque que puede ser utilizado en otras partes por ello no llevara el nombre de header-->
+                <h1 class="heading-primary">
+                    <!-- los siguientes son modificaredes por ello llevan el nombre del bloque --nombre del modifier -->
+                    <span class="heading-primary--main">OUTDOORS</span>
+                    <span class="heading-primary--sub">IS WHERE LIFE HAPPENS</span>
+                </h1>
+                <!--btn es el nombre del bloque y las otras dos clases modifiers-->
+                <a href="#" class="btn btn--white btn--animated">Discover our Tours</a>
+           </div>
+        </header>
+    </body>
+</html>

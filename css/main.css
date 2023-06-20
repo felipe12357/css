@@ -1,0 +1,164 @@
+/*
+COLORS:
+
+Light green: #7ed56f
+Medium green: #55c57a
+Dark green: #28b485
+
+*/
+html {
+  /* de esta forma establecezo el valor de rem para toda la aplicacion 
+    font-size: 10px;*/
+  /*el valro por defecto es de 16px sin embargo los usuarios podrian cambiarlo por esta razon
+    no se recomienda utilizar un valor fijo por ello si queremos 10 pixels el valor en porcentaje
+    seria */
+  font-size: 62.5%; }
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box; }
+
+body {
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #777;
+  padding: 3rem; }
+
+.header {
+  height: 95vh;
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/hero.jpg);
+  background-size: cover;
+  background-position: top;
+  clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
+  /*aplica las 4 coordenas donde quiero q persista la imagen*/
+  position: relative; }
+
+.header__logo-box {
+  position: absolute;
+  top: 4rem;
+  left: 4rem; }
+
+.header__logo {
+  height: 3.5rem; }
+
+.header__text-box {
+  position: absolute;
+  /*
+    *la posicion absoluta se hace en relacion con su objeto padre q este con posicionado con alguna propiedad
+    si no existe alguno toma el document body, por esta razon en este ejemplo ponemos position:relative el header
+     */
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center; }
+
+.heading-primary {
+  color: #fff;
+  text-transform: uppercase;
+  margin-bottom: 6rem; }
+
+.heading-primary--main {
+  display: block;
+  font-size: 6rem;
+  font-weight: 400;
+  letter-spacing: 3.5rem;
+  animation-name: moveInLeft;
+  /*nombre de la animacion q creamos abajo*/
+  animation-duration: 3s;
+  /* 
+    otras posibilidades de configuracion
+
+    animation-timing-function: como se va a comportar la animation
+    animation-delay: teimpo para q inicie la animation
+    animation-iteration-count: cuantas veces se debe ejecutar la animation
+   */ }
+
+.heading-primary--sub {
+  display: block;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 1.75rem;
+  animation: moveInRight 3s; }
+
+@keyframes moveInLeft {
+  /*initial state */
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem); }
+  80% {
+    transform: translateX(2rem); }
+  /*final state*/
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
+
+@keyframes moveInRight {
+  /*initial state */
+  0% {
+    opacity: 0;
+    transform: translateX(10rem); }
+  80% {
+    transform: translateX(-2rem); }
+  /*final state*/
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
+
+@keyframes moveInBottom {
+  /*initial state */
+  0% {
+    opacity: 0;
+    transform: translateY(3rem); }
+  /*final state*/
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
+
+.btn:link,
+.btn:visited {
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 1.5rem 4rem;
+  display: inline-block;
+  border-radius: 10rem;
+  transition: all .2s;
+  position: relative;
+  /*lo pongo relativo para poder q el btn after position relative lo asocie con este elemento */ }
+
+.btn--white {
+  background: #fff;
+  color: #777; }
+
+.btn--white::after {
+  background-color: white; }
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 1rem 2rem #0000002b; }
+
+.btn:hover::after {
+  transform: scale(1.5);
+  opacity: 0; }
+
+.btn:active {
+  transform: translateY(3px);
+  box-shadow: 0 5rem 1rem #000000af; }
+
+.btn::after {
+  content: "hola";
+  /*puede ser cualquier cosa pero debe ser definido */
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 10rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all .2s; }
+
+.btn--animated {
+  animation: moveInBottom 2s ease-out; }

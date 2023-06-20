@@ -1,0 +1,108 @@
+*{
+    margin:0;
+    padding:0;
+}
+
+$color-primary: #f9ed69; // yellow
+$color-secondary:#f08a5d; // orange
+$color-tertiary:#b83b53; //pink
+$color-text-dark:#333;
+$color-text-light:#eee;
+$width-button: 150px;
+
+
+@mixin clearflix {
+    &::after {
+        content:"";
+        clear:both;
+        display: table;
+    }
+}
+
+@mixin style-link-text($color) {
+    text-decoration: none;
+    text-transform: uppercase;
+    color:$color
+}
+
+nav{
+    margin: 30px;
+    background-color:$color-primary;
+
+    //Arregla el problema con los elementos flotantes
+   /*  &::after {
+        content:"";
+        clear:both;
+        display: table;
+    } */
+   @include clearflix;
+}
+
+.navigation {
+    list-style: none;
+    float:left;
+
+    li {
+      display:inline-block; 
+      margin-left:30px; 
+
+      &:first-child {
+        margin:0;
+      }
+
+      a:link {
+        @include style-link-text($color-text-dark);
+      }
+    }
+}
+
+.buttons {
+    float:right;
+}
+
+//este selector ya se esta usando y lo puedo mejorara implementando extend:
+%btn-placeholder{
+    padding:10px;
+    display: inline-block;
+    text-align:center;
+    border-radius: 100px;
+    width:$width-button;
+    @include style-link-text($color-text-light);
+}
+/* .btn-main:link,
+.btn-hot:link {
+    padding:10px;
+    display: inline-block;
+    text-align:center;
+    border-radius: 100px;
+    width:$width-button;
+    @include style-link-text($color-text-light);
+} */
+
+.btn-main{
+    &:link{
+        //Se usa extend cuando los elementos estan relacionados ya q cuando transforma 
+        // aa css genera un bloque: .btn-main:link,.btn-hot:link
+        // en cambio el mixin genera 2 bloques separados
+        @extend %btn-placeholder;
+        background-color: $color-secondary;
+    }
+
+    &:hover{
+        @extend %btn-placeholder;
+        background-color: darken($color-secondary, $amount: 15%);
+    }
+}
+
+.btn-hot{
+    &:link{
+        background-color: $color-tertiary;
+    }
+
+    &:hover{
+        background-color: darken($color-tertiary, $amount: 15%);
+    }
+}
+
+
+
