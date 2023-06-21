@@ -1,0 +1,2 @@
+recordar q para transformar los archivos scss a css ejecutamos el script que esta en el package.json:
+compile:sass

@@ -1,0 +1,25 @@
+html {
+    /* de esta forma establecezo el valor de rem para toda la aplicacion 
+    font-size: 10px;*/ 
+
+    /*el valro por defecto es de 16px sin embargo los usuarios podrian cambiarlo por esta razon
+    no se recomienda utilizar un valor fijo por ello si queremos 10 pixels el valor en porcentaje
+    seria */
+    font-size:62.5%
+}
+
+
+* {
+    margin:0px;
+    padding:0px;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.7;
+    color: $color-gray-dark;
+    padding: 3rem;
+}
