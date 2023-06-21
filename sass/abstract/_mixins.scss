@@ -1,0 +1,7 @@
+@mixin clearflix {
+    &::after {
+        content:"";
+        clear:both;
+        display: table;
+    }
+}
