@@ -1,4 +1,50 @@
-.row{
+
+//sin float utilizando display inline-block
+//al hacerlo asi existen unos margenes o espacios q toca ajustar
+//para ello  se agregan las propiedades en la clase row: overflow:hidden, white-space:nowrap
+.rowInlineBlock{
+    max-width:$grid-width;
+    background-color:#eee;
+    margin: 0 auto;
+    overflow: hidden;
+    white-space: nowrap;
+    
+    //selecciona todo menos "last child"
+    &:not(:last-child){
+        margin-bottom:$margin-between-col-vertical;
+    }
+
+    //class^="col-" selecciona todas las clases que empicen con col-
+    //class*="col-" selecciona todas las clases que contengan  col-
+    //class$="col-" selecciona todas las clases que terminen  col-
+    [class^="col-"]{
+        background-color: rgba(255, 166, 0, 0.026);
+        display: inline-block;
+        &:not(:last-child){
+            margin-right: $margin-between-col-horizontal;
+        }
+    }
+
+    .col-2{
+        margin: 0px;
+        width:calc((100% - #{$margin-between-col-horizontal})/ 2);
+        
+    }
+
+    .col-1{
+        //son 3 margenes (la ultima no se cuenta y lo divido entre los 4 elementos
+        width:calc( (100% - #{$margin-between-col-horizontal} * 3)/ 4);
+    }
+
+    .col-3{
+        //sumo 3 col-1 + 2 margenes
+        width:calc( ((100% - #{$margin-between-col-horizontal} * 3)/ 4 ) * 3 + (2*#{$margin-between-col-horizontal}) );    
+    }
+}
+
+
+//al utilizar row float es necesario utilizar la tecnica del mixin
+.rowFloat{
     max-width:$grid-width;
     background-color:#eee;
     margin: 0 auto;
@@ -13,7 +59,7 @@
     //class*="col-" selecciona todas las clases que contengan  col-
     //class$="col-" selecciona todas las clases que terminen  col-
     [class^="col-"]{
-        background-color: orange;
+        background-color: rgba(255, 166, 0, 0.036);
         float:left; //al utilizar la tecnica float esta hace q se pierda "height" del contenedor padre "row"
         //por ello incluyo el mixin clearfix;
 
@@ -22,8 +68,7 @@
         }
     }
 
-    .col-2{
-        
+    .col-2{ 
         //para usar variables de SCSS dentro de la funcion calc debe hacerse asi:
         width:calc( (100% - #{$margin-between-col-horizontal})/ 2);
        

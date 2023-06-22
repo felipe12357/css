@@ -61,6 +61,26 @@ body {
     opacity: 1;
     transform: translate(0); } }
 
+.heading-secondary {
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  display: inline-block;
+  background-image: linear-gradient(to right, #7ed56f, #28b485);
+  -webkit-background-clip: text;
+  color: transparent;
+  letter-spacing: .2rem;
+  transition: all .2s; }
+  .heading-secondary:hover {
+    transform: skewY(2deg) skewX(15deg) scale(1.1);
+    text-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.2); }
+
+.u-center-text {
+  text-align: center; }
+
+.u-margin-bottom-8 {
+  margin-bottom: 8rem; }
+
 .btn:link, .btn:visited {
   text-transform: uppercase;
   text-decoration: none;
@@ -155,24 +175,50 @@ body {
   .header__logo {
     height: 3.5rem; }
 
-.row {
+.rowInlineBlock {
+  max-width: 114rem;
+  background-color: #eee;
+  margin: 0 auto;
+  overflow: hidden;
+  white-space: nowrap; }
+  .rowInlineBlock:not(:last-child) {
+    margin-bottom: 3rem; }
+  .rowInlineBlock [class^="col-"] {
+    background-color: rgba(255, 166, 0, 0.026);
+    display: inline-block; }
+    .rowInlineBlock [class^="col-"]:not(:last-child) {
+      margin-right: 2rem; }
+  .rowInlineBlock .col-2 {
+    margin: 0px;
+    width: calc((100% - 2rem)/ 2); }
+  .rowInlineBlock .col-1 {
+    width: calc( (100% - 2rem * 3)/ 4); }
+  .rowInlineBlock .col-3 {
+    width: calc( ((100% - 2rem * 3)/ 4 ) * 3 + (2*2rem)); }
+
+.rowFloat {
   max-width: 114rem;
   background-color: #eee;
   margin: 0 auto; }
-  .row:not(:last-child) {
+  .rowFloat:not(:last-child) {
     margin-bottom: 3rem; }
-  .row::after {
+  .rowFloat::after {
     content: "";
     clear: both;
     display: table; }
-  .row [class^="col-"] {
-    background-color: orange;
+  .rowFloat [class^="col-"] {
+    background-color: rgba(255, 166, 0, 0.036);
     float: left; }
-    .row [class^="col-"]:not(:last-child) {
+    .rowFloat [class^="col-"]:not(:last-child) {
       margin-right: 2rem; }
-  .row .col-2 {
+  .rowFloat .col-2 {
     width: calc( (100% - 2rem)/ 2); }
-  .row .col-1 {
+  .rowFloat .col-1 {
     width: calc( (100% - 2rem * 3)/ 4); }
-  .row .col-3 {
+  .rowFloat .col-3 {
     width: calc( ((100% - 2rem * 3)/ 4 ) * 3 + (2*2rem)); }
+
+.section-about {
+  background-color: #f7f7f7;
+  padding: 25rem 0;
+  margin-top: -25vh; }
