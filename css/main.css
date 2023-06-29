@@ -1,3 +1,17 @@
+/* 
+0 -600px        phone
+600px - 900px   Tablet Portrait
+900px - 1200px  Tablet landscape
+1200px - 1800px Desktop
+1800px +        Big Desktop
+*/
+/*
+breakpoint possible values:
+    phone
+    tab-port
+    tab-land
+    big-desktop
+*/
 /*
 COLORS:
 
@@ -12,7 +26,26 @@ html {
   /*el valro por defecto es de 16px sin embargo los usuarios podrian cambiarlo por esta razon
     no se recomienda utilizar un valor fijo por ello si queremos 10 pixels el valor en porcentaje
     seria */
-  font-size: 62.5%; }
+  font-size: 62.5%;
+  /* esto corresponde respond-phone */
+  /*  @media (max-width:600px){
+        font-size: 50px;
+    }  */
+  /*  @include respond-phone{
+        font-size: 50%;
+    } */ }
+  @media (max-width: 75em) {
+    html {
+      font-size: 56.25%; } }
+  @media (max-width: 56.25em) {
+    html {
+      font-size: 50%; } }
+  @media (max-width: 37.5em) {
+    html {
+      font-size: 30%; } }
+  @media (min-width: 112.5em) {
+    html {
+      font-size: 75%; } }
 
 * {
   margin: 0px;
@@ -212,6 +245,24 @@ body {
   .composition:hover .composition__photo:not(:hover) {
     transform: scale(0.85); }
 
+.feature-box {
+  background-color: rgba(255, 255, 255, 0.8);
+  font-size: 1.5rem;
+  padding: 2.5rem;
+  text-align: center;
+  border-radius: 3px;
+  box-shadow: 0 1.5rem 4rem black;
+  transition: transform .3s; }
+  .feature-box__icon {
+    font-size: 6rem;
+    margin-bottom: .5rem;
+    display: inline-block;
+    background-image: linear-gradient(to right, #7ed56f, #28b485);
+    -webkit-background-clip: text;
+    color: transparent; }
+  .feature-box:hover {
+    transform: translateY(-1.5rem) scale(1.03); }
+
 .header {
   height: 95vh;
   background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/hero.jpg);
@@ -248,14 +299,14 @@ body {
     white-space: normal;
     vertical-align: top; }
     .rowInlineBlock [class^="col-"]:not(:last-child) {
-      margin-right: 2rem; }
+      margin-right: 6rem; }
   .rowInlineBlock .col-2 {
     margin: 0px;
-    width: calc((100% - 2rem)/ 2); }
+    width: calc((100% - 6rem)/ 2); }
   .rowInlineBlock .col-1 {
-    width: calc( (100% - 2rem * 3)/ 4); }
+    width: calc( (100% - 6rem * 3)/ 4); }
   .rowInlineBlock .col-3 {
-    width: calc( ((100% - 2rem * 3)/ 4 ) * 3 + (2*2rem)); }
+    width: calc( ((100% - 6rem * 3)/ 4 ) * 3 + (2*6rem)); }
 
 .rowFloat {
   max-width: 114rem;
@@ -269,15 +320,24 @@ body {
   .rowFloat [class^="col-"] {
     float: left; }
     .rowFloat [class^="col-"]:not(:last-child) {
-      margin-right: 2rem; }
+      margin-right: 6rem; }
   .rowFloat .col-2 {
-    width: calc( (100% - 2rem)/ 2); }
+    width: calc( (100% - 6rem)/ 2); }
   .rowFloat .col-1 {
-    width: calc( (100% - 2rem * 3)/ 4); }
+    width: calc( (100% - 6rem * 3)/ 4); }
   .rowFloat .col-3 {
-    width: calc( ((100% - 2rem * 3)/ 4 ) * 3 + (2*2rem)); }
+    width: calc( ((100% - 6rem * 3)/ 4 ) * 3 + (2*6rem)); }
 
 .section-about {
   background-color: #f7f7f7;
   padding: 25rem 0;
   margin-top: -25vh; }
+
+.section-features {
+  padding: 20rem 0;
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/nat-4.jpg);
+  background-size: cover;
+  transform: skewY(-7deg);
+  margin-top: -10rem; }
+  .section-features > * {
+    transform: skewY(7deg); }

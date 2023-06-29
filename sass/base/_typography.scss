@@ -2,10 +2,7 @@
     font-size: 3.5rem;
     text-transform: uppercase;
     font-weight: 700;
-    display:inline-block;
-    background-image: linear-gradient(to right, $color-primary-light, $color-primary-dark);
-    -webkit-background-clip: text; //el valor del background se cambia por el del texto
-    color:transparent; // para poder terminar el efecto se coloca el color transparente
+    @include colorgradient;
 
     letter-spacing: .2rem;
     transition: all .2s;

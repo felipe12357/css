@@ -6,6 +6,13 @@
     }
 }
 
+@mixin colorgradient{
+    display: inline-block;
+    background-image: linear-gradient(to right, $color-primary-light, $color-primary-dark);
+    -webkit-background-clip: text; //el valor del background se cambia por el del texto
+    color:transparent; // para poder terminar el efecto se coloca el color transparente
+}
+
 //Media QUERY Manager
 /* 
 0 -600px        phone

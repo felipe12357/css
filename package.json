@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "compile:sass": "node-sass sass/main.scss css/main.css --watch",
-    "compile:sass-test": "node-sass sass/test.scss css/test.css"
+    "compile:sass-test": "node-sass sass/test.scss css/test.css --watch"
   },
   "author": "",
   "license": "ISC",
