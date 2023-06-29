@@ -22,7 +22,8 @@
     [class^="col-"]{
        // background-color: rgb(248, 255, 255);
         display: inline-block;
-        white-space: normal; //esta propiedad tambien debe settearse y permite q el texto ocupe el espacio... si es mas grande salta de linea
+        white-space: normal; //esta propiedad tambien debe settearse y permite q el texto ocupe el espacio... si es mas grande salta de linea para corregir
+        //lo q pusismo en el padre
         vertical-align: top;
         &:not(:last-child){
             margin-right: $margin-between-col-horizontal;

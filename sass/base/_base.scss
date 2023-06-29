@@ -5,7 +5,39 @@ html {
     /*el valro por defecto es de 16px sin embargo los usuarios podrian cambiarlo por esta razon
     no se recomienda utilizar un valor fijo por ello si queremos 10 pixels el valor en porcentaje
     seria */
-    font-size:62.5%
+
+    //1 rem equivale a 16px, pero queremos tener 10px por lo tanto:
+    font-size:62.5%; // 1rem = 10px, 10px/16px => 62.5%
+
+    /* esto corresponde respond-phone */
+   /*  @media (max-width:600px){
+        font-size: 50px;
+    }  */
+
+    //le envio al mixin el valor de las propiedades
+   /*  @include respond-phone{
+        font-size: 50%;
+    } */
+
+   
+    //IMPORTANTE EL ORDEN EN EL Q SE PONGAN YA Q SI LAS REGLAS SE SUPERPONEN EL TENDRA EN CUENTA LA ULTIMA
+    @include respond(tab-land){
+        font-size: 56.25%; //1 rem = 9px, 9/15 = 56.25%
+    }
+
+    //este hara lo mismo, solo q enviamos el parametro de cuales breakpoints debe aplicar
+    @include respond(tab-port){
+        font-size: 50%; //1 rem = 8px, 8/16 = 50%
+    }
+
+     //este hara lo mismo, solo q enviamos el parametro de cuales breakpoints debe aplicar
+     @include respond(phone){
+        font-size: 30%; //1 rem = 4.8px
+    }
+
+    @include respond( big-desktop){
+        font-size: 75%; //1 rem = 12px, 12/16 = 75%
+    }
 }
 
 

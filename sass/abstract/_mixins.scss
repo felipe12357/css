@@ -5,3 +5,49 @@
         display: table;
     }
 }
+
+//Media QUERY Manager
+/* 
+0 -600px        phone
+600px - 900px   Tablet Portrait
+900px - 1200px  Tablet landscape
+1200px - 1800px Desktop
+1800px +        Big Desktop
+*/
+
+@mixin respond-phone {
+    /* @content permite enviar un conjunto de reglas ver archivo "base" para ver el ejemplo;
+    Al hacerlo de esta forma permite establecer en un solo sitio el valor de los breakpoints de las media querys
+    de tal forma q si algun momento toca cambiarlas solo se hará en este archivo
+    */
+    @media (max-width:600px) { @content  };
+}
+
+/*
+breakpoint possible values:
+    phone
+    tab-port
+    tab-land
+    big-desktop
+*/
+
+//1em = 16px
+//los valores REM Y EM para las media queries no tienen como referencia los elemento padre
+//en lugar de ello toman los valores segun lo q el usuario configure en su navegador
+@mixin respond($breakpoint){
+    @if $breakpoint == phone {
+        @media (max-width:37.5em) { @content  }; //600px
+    }
+
+    @if $breakpoint == tab-port {
+        @media (max-width:56.25em) { @content  }; //900px
+    }
+
+    @if $breakpoint == tab-land {
+        @media (max-width:75em) { @content  }; //1200px
+    }
+
+    @if $breakpoint == big-desktop {
+        @media (min-width:112.5em) { @content  }; //1800px
+    }
+}
