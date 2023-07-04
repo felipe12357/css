@@ -6,7 +6,7 @@
 // volvemos a ajustar esta propiedad: [class^="col-"] white-space: normal;
 .rowInlineBlock{
     max-width:$grid-width;
-   // background-color:#eee;
+  //  background-color:blue;
     margin: 0 auto;
    // overflow: hidden;
     white-space: nowrap;
@@ -20,7 +20,6 @@
     //class*="col-" selecciona todas las clases que contengan  col-
     //class$="col-" selecciona todas las clases que terminen  col-
     [class^="col-"]{
-       // background-color: rgb(248, 255, 255);
         display: inline-block;
         white-space: normal; //esta propiedad tambien debe settearse y permite q el texto ocupe el espacio... si es mas grande salta de linea para corregir
         //lo q pusismo en el padre
@@ -44,6 +43,10 @@
     .col-3{
         //sumo 3 col-1 + 2 margenes
         width:calc( ((100% - #{$margin-between-col-horizontal} * 3)/ 4 ) * 3 + (2*#{$margin-between-col-horizontal}) );    
+    }
+
+    .col-1x3{
+        width:calc((100% - #{$margin-between-col-horizontal} *2 )/ 3);
     }
 }
 
@@ -87,5 +90,9 @@
     .col-3{
         //sumo 3 col-1 + 2 margenes
         width:calc( ((100% - #{$margin-between-col-horizontal} * 3)/ 4 ) * 3 + (2*#{$margin-between-col-horizontal}) );    
+    }
+
+    .col-1x3{
+        width:calc((100% - #{$margin-between-col-horizontal} *2 )/ 3);
     }
 }
