@@ -11,6 +11,10 @@
    // overflow: hidden;
     white-space: nowrap;
 
+    *{
+        //restableco la propiedad para todos los elementos q esten dentro
+        white-space: initial
+    }
 
     @include respond(phone){
         white-space:inherit;
