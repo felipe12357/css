@@ -22,6 +22,10 @@
 1800px +        Big Desktop
 */
 
+/* 
+order: Base - typograpy - general layout - grid- page layout - components
+*/
+
 @mixin respond-phone {
     /* @content permite enviar un conjunto de reglas ver archivo "base" para ver el ejemplo;
     Al hacerlo de esta forma permite establecer en un solo sitio el valor de los breakpoints de las media querys

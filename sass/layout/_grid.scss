@@ -10,10 +10,24 @@
     margin: 0 auto;
    // overflow: hidden;
     white-space: nowrap;
+
+
+    @include respond(phone){
+        white-space:inherit;
+        max-width:70%;
+    }
+
+    @include respond(tab-port){
+        max-width:90%;
+    }
     
     //selecciona todo menos "last child"
     &:not(:last-child){
         margin-bottom:$margin-between-col-vertical;
+
+        @include respond(phone){
+            margin-bottom:$margin-between-col-vertical-small
+        }
     }
 
     //class^="col-" selecciona todas las clases que empicen con col-
@@ -26,6 +40,14 @@
         vertical-align: top;
         &:not(:last-child){
             margin-right: $margin-between-col-horizontal;
+            @include respond(phone){
+                margin-right: 0;
+                margin-bottom:$margin-between-col-vertical-small
+            }
+        }
+
+        @include respond(phone){
+            width:100% !important;
         }
     }
 
@@ -56,9 +78,23 @@
     max-width:$grid-width;
   //  background-color:#eee;
     margin: 0 auto;
+
+    @include respond(phone){
+        max-width:70%;
+    }
+
+    @include respond(tab-port){
+        max-width:90%;
+    }
+
     //selecciona todo menos "last child"
     &:not(:last-child){
         margin-bottom:$margin-between-col-vertical;
+
+        @include respond(phone){
+            margin-right: 0;
+            margin-bottom:$margin-between-col-vertical-small;
+        }
     }
 
     @include clearflix;
@@ -73,6 +109,14 @@
 
         &:not(:last-child){
             margin-right: $margin-between-col-horizontal;
+            @include respond(phone){
+                margin-right: 0;
+                margin-bottom:$margin-between-col-vertical-small;
+            }
+        }
+
+        @include respond(phone){
+            width:100% !important;
         }
     }
 

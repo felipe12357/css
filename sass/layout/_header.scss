@@ -10,6 +10,10 @@
     clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%); /*aplica las 4 coordenas donde quiero q persista la imagen*/
     position:relative;
 
+    @include respond(phone){
+        clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+    }
+
     // "&" representa el nombre de la clase que tenemos, en este caso header
     &__logo-box{ // por lo tanto esta etiqueta es igual a: .header__logo-box
         position: absolute;
