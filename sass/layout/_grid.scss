@@ -16,13 +16,13 @@
         white-space: initial
     }
 
+    @include respond(tab-port){
+        max-width:95%;
+    }
+
     @include respond(phone){
         white-space:inherit;
         max-width:70%;
-    }
-
-    @include respond(tab-port){
-        max-width:90%;
     }
     
     //selecciona todo menos "last child"
@@ -45,7 +45,6 @@
         &:not(:last-child){
             margin-right: $margin-between-col-horizontal;
             @include respond(phone){
-                margin-right: 0;
                 margin-bottom:$margin-between-col-vertical-small
             }
         }
@@ -83,12 +82,12 @@
   //  background-color:#eee;
     margin: 0 auto;
 
-    @include respond(phone){
-        max-width:70%;
+    @include respond(tab-port){
+        max-width:95%;
     }
 
-    @include respond(tab-port){
-        max-width:90%;
+    @include respond(phone){
+        max-width:70%;
     }
 
     //selecciona todo menos "last child"
@@ -96,7 +95,6 @@
         margin-bottom:$margin-between-col-vertical;
 
         @include respond(phone){
-            margin-right: 0;
             margin-bottom:$margin-between-col-vertical-small;
         }
     }

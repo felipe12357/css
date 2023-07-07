@@ -472,13 +472,13 @@ body {
   white-space: nowrap; }
   .rowInlineBlock * {
     white-space: initial; }
+  @media (max-width: 56.25em) {
+    .rowInlineBlock {
+      max-width: 95%; } }
   @media (max-width: 37.5em) {
     .rowInlineBlock {
       white-space: inherit;
       max-width: 70%; } }
-  @media (max-width: 56.25em) {
-    .rowInlineBlock {
-      max-width: 90%; } }
   .rowInlineBlock:not(:last-child) {
     margin-bottom: 3rem; }
     @media (max-width: 37.5em) {
@@ -492,7 +492,6 @@ body {
       margin-right: 6rem; }
       @media (max-width: 37.5em) {
         .rowInlineBlock [class^="col-"]:not(:last-child) {
-          margin-right: 0;
           margin-bottom: 1.5rem; } }
     @media (max-width: 37.5em) {
       .rowInlineBlock [class^="col-"] {
@@ -510,17 +509,16 @@ body {
 .rowFloat {
   max-width: 114rem;
   margin: 0 auto; }
+  @media (max-width: 56.25em) {
+    .rowFloat {
+      max-width: 95%; } }
   @media (max-width: 37.5em) {
     .rowFloat {
       max-width: 70%; } }
-  @media (max-width: 56.25em) {
-    .rowFloat {
-      max-width: 90%; } }
   .rowFloat:not(:last-child) {
     margin-bottom: 3rem; }
     @media (max-width: 37.5em) {
       .rowFloat:not(:last-child) {
-        margin-right: 0;
         margin-bottom: 1.5rem; } }
   .rowFloat::after {
     content: "";
