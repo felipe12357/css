@@ -12,6 +12,7 @@
 
     @include respond(phone){
         clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+        height:50vh
     }
 
     // "&" representa el nombre de la clase que tenemos, en este caso header

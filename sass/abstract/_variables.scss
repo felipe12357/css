@@ -19,6 +19,10 @@ $color-white:#fff;
 $color-black:#000;
 $color-grey-light-1:#f7f7f7;
 $color-grey-light-2:#eee;
+$color-grey-dark-1: #777;
+$color-grey-dark-2: #999;
+$color-grey-dark-3:#333;
+
 
 
 //Variables Grid
@@ -32,4 +36,5 @@ $default-font-size: 1.6rem;
 
 //boxshadow
 $box-shadow-small: 0 1.5rem 4rem rgba($color-black, .15);
-$box-shadow-medium: 0 1.5rem 4rem rgba($color-black, 1.5)
+$box-shadow-medium: 0 1.5rem 4rem rgba($color-black, 1.5);
+$box-shadow-big: 0 1.5rem 4rem rgba($color-black, 4)
