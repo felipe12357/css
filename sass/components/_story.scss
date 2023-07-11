@@ -9,6 +9,10 @@
     font-size: $default-font-size;
     transform: skewX(-12deg);
 
+    @include respond(phone){
+        transform: skewX(0);
+    }
+
     &__shape {
         width: 15rem;
         height: 15rem;
@@ -20,10 +24,17 @@
         -webkit-clip-path: circle(50% at 50% 50%);
         transform: translateX(-3rem) skewX(12deg) ; //La mejor forma de mover un elemento q esta flotando NO es usar margenes es con translate
         position:relative;
+
+        @include respond(phone){
+            transform: translateX(-3rem) skewX(0);
+        }
     }
 
     &__text {
         transform: skewX(12deg);
+        @include respond(phone){
+            transform: skewX(0);
+        }
     }
 
     &__img {
