@@ -49,9 +49,27 @@
                     </div>
                     <div class="col-2">
                        <div class="composition">
-                            <img src="img/nat-1-large.jpg" alt="Photo 1" class="composition__photo composition__photo--p1">
-                            <img src="img/nat-2-large.jpg" alt="Photo 2" class="composition__photo composition__photo--p2">
-                            <img src="img/nat-3-large.jpg" alt="Photo 3" class="composition__photo composition__photo--p3">
+                            <!-- Según el width de la imagen y la resolucion de la pantalla el navegador elegirá la imagen correspondiente: -->
+                            <!-- 300w y 1000w equivale al ancho de las imagenes-->
+                            <!-- 209 es el ancho q tiene la imagen original con una resolucion de 900
+                                con este numero hago el calculo
+                                209 / 900 => 0.23
+                                159 / 600 => 0.26
+                                300px seria el valor q le asignamos por defecto -->
+                            <img srcset="img/nat-1.jpg 300w, img/nat-1-large.jpg 1000w" 
+                                sizes="(max-width: 900px) 23vw, (max-width:600px) 26vw, 300px"
+                                alt="Photo 1" 
+                                class="composition__photo composition__photo--p1">
+
+                            <img srcset="img/nat-2.jpg 300w, img/nat-2-large.jpg 1000w" 
+                                sizes="(max-width: 900px) 20vw, (max-width:600px) 30vw, 300px"
+                                alt="Photo 2" 
+                                class="composition__photo composition__photo--p2">
+
+                            <img srcset="img/nat-3.jpg 300w, img/nat-3-large.jpg 1000w" 
+                                sizes="(max-width: 900px) 20vw, (max-width:600px) 30vw, 300px"
+                                alt="Photo 3" 
+                                class="composition__photo composition__photo--p3">
                         </div>
                     </div>
                 </div>
@@ -307,7 +325,19 @@
         </main>
         <footer class="footer">
             <div class="footer__logo-box">
-                <img src="img/logo-green-2x.png" alt="full logo" class="footer__logo">
+                <picture class="footer__logo">
+                    <!-- podemos insertar una media query para así cambiar la imagen segun el ancho de la pantalla
+                    en este caso -->
+                    <source srcset="img/logo-green-small-1x.png 1x, img/logo-green-small-2x.png 2x"
+                            media="(max-width: 37.5em)">
+                     <!-- al setter "srcset" el navegador utiliza la imagen segun la capacidad de la pantalla no la elige segun su tamaño
+                    sino según la cantidad de pixeles-->
+                    <img srcset="img/logo-green-1x.png 1x, img/logo-green-2x.png 2x" alt="full logo">
+                </picture>
+
+               <!-- el navegador utiliza la imagen segun la capacidad de la pantalla no la elige segun su tamaño
+                    sino según la cantidad de pixeles -->
+               <!-- <img srcset="img/logo-green-1x.png 1x, img/logo-green-2x.png 2x" alt="full logo" class="footer__logo"> -->
             </div>
             <div class="rowInlineBlock">
                 <div class="col-2">
