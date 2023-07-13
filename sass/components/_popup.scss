@@ -1,0 +1,87 @@
+.popup{
+    background-color: rgba($color-black,.8);
+    
+    position:fixed;
+    top:0;
+    left:0;
+    z-index: 100;
+    width:100%;
+    height:100vh;
+  
+    opacity: 0;
+    visibility: hidden;
+    transition: all .3s;
+
+    &:target {
+        opacity: 1;
+        visibility: visible;
+    }
+    
+
+   
+    &__content{
+        @include absCenter;
+        width: 75%;
+        background-color: $color-white;
+        border-radius: 3px;
+        box-shadow: $box-shadow-medium;
+        overflow: hidden;
+
+        .col-2:last-child{
+            padding: 3rem 3rem 0rem 0rem;
+        }
+    }
+
+    &__content-table{
+        @include absCenter;
+        width: 75%;
+        background-color: $color-white;
+        border-radius: 3px;
+        box-shadow: $box-shadow-medium;
+        display: table;
+        overflow: hidden;
+    }
+
+    &__left {
+        width:33.3%;
+        display: table-cell;
+    }
+
+    &__right {
+        width:33.3%;
+        display: table-cell;
+        vertical-align: middle;
+        padding: 3rem 5rem;
+    }
+
+    &__close {
+        &:link,
+        &:visited {
+            color:$color-grey-dark-1;
+            position:absolute;
+            top:2.5rem;
+            right:2.5rem;
+            font-size: 3rem;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        &:hover {
+            color:$color-primary;
+        }
+    }
+
+    &__img {
+        display:block;
+        width:100%;
+    }
+
+    &__text {
+        font-size: 1.4rem;
+        margin-bottom: 4rem;
+        column-count: 2;
+        column-gap: 2em;
+        text-align: justify;
+        color:$color-grey-dark-2
+    }
+}

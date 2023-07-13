@@ -6,6 +6,13 @@
     }
 }
 
+@mixin absCenter {
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+}
+
 @mixin colorgradient{
     display: inline-block;
     background-image: linear-gradient(to right, $color-primary-light, $color-primary-dark);
