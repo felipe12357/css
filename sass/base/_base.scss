@@ -55,3 +55,8 @@ body {
     color: $color-gray-dark;
     padding: 3rem;
 }
+
+::selection {
+    background-color: $color-primary;
+    color:$color-white
+}
