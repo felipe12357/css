@@ -1,3 +1,3 @@
-![sample1](sample_images/sample1.png?raw=true "descripcion")
-![sample1](sample_images/sample2.png?raw=true "cards")
-![sample1](sample_images/sample2.png?raw=true "cards type 2")
+![plot](./sample_images/sample1.png)
+![plot](./sample_images/sample2.png)
+![plot](./sample_images/sample2.png)
